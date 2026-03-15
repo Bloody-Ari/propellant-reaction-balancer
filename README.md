@@ -1,4 +1,4 @@
-# Carpinchos Main Tools
+# CAT-ME (Carpinchos Aid Tools, Melissa Edition)
 
 This project aims to aid the development of the CP-1 proyect. Which, for now, encompasses *Melissa*, our first experimental rocket engine.
 
