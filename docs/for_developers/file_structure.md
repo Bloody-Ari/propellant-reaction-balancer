@@ -7,10 +7,15 @@ The main idea is to have an src directory which contains all the source code wri
 Basic example of the source directory:
 
 └── src
+
 │	└── include
+
  │ 	   │ ├── reaction_functions.h
+ 
 │    │   └── reaction_types.h
+
  │   ├── main.c
+ 
   │  └── reaction_functions.c
 
 ## Bin and Build Directories  🛠
@@ -19,12 +24,15 @@ Both of these directories are to be used for compilation, the bin directory shou
 These directories should be cleaned by *make clean*, here's a simple example:
 
 └── build
-    │   └── reaction_types.o
-    ├── bin
-  │  └── main_executable.out
+
+│   └── reaction_types.o
+
+│   ├── bin
+
+│   │  └── main_executable.out
 
 
-##Lib Directory
+## Lib Directory
 
 This directory is destined to store external libraries. It's empty for now tho.
 
