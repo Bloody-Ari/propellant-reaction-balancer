@@ -1,7 +1,7 @@
 struct ReactionData {
   float fuel_g;
   float fuel_mol;
-  float fuel_uma;
+  float fuel_uma; /* g/mol */
   float oxidizer_g;
   float oxidizer_mol;
   float oxidizer_uma;
