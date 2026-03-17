@@ -2,10 +2,6 @@
 This file includes an introduction to the project aimed at developers and those who want some in depth information.
 It should be enough for those who just want a little peek at the backstage, but don't want to fully inmerse themselves in the code.
 
-[TOCM]
-
-[TOC]
-
 # General Idea 🔭
 In the technical side of things the main idea behind te inner workings of this project is an object oriented programming paradigm, using a class to define the properties of a reaction. The core loop defines the stoichiometric relationship and then applies it to the variable inputs of the user. After making the first calculation it gets recalculated using an introduced Oxidizier to Fuel ratio and, finally, it computes not only the moles but also the mass and volume needed along with the mass and volume of the products.
 
