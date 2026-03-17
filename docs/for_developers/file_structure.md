@@ -1,10 +1,6 @@
 # File Structure 📂
 The file structure it's based around some modularity and ease of use. It's not meant to be perfect, but to be the most usable and understandable for everyone.
 
-[TOCM]
-
-[TOC]
-
 ## Source Directory
 The main idea is to have an src directory which contains all the source code written for the project. This code would be split, at least for now, into source .c files (with the expansion of the projects this files would have to split into several sub directories), and the header files .h, which include (in separate files) declarations of types and functions.
 
