@@ -50,5 +50,8 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 	$(info CREATED $@)
 
+run: $(NAME)
+	bin/cat-me
+
 clean:
 	rm $(OBJS) $(TARGETS)
