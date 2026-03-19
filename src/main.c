@@ -16,23 +16,36 @@ int main(){
 
   struct ReactionData main_reaction = createEmptyReactionStruct();
 
+  float input = 0;
+
   (void)defineMainReactionData(&main_reaction);
 
-  /* Main menu!!! May convert it to a function */
+
+  /* Main menu!!! Should convert it to a function 
+   * mainly so I can "count" iterations and limit them,
+   * and also to have the chance to like return without
+   * exiting the program haha
+  */
   while(1){
-    (void)printf("Current data: \n");
-    (void)printf("Oxidizer mol: %.3f\n", main_reaction.oxidizer_mol);
-    (void)printf("Fuel mol: %.3f\n", main_reaction.fuel_mol);
-    (void)printf("OF: %.3f\n", main_reaction.fuel_g);
+    (void)printf("╔════════════════════════════════════════════╗\n");
+    (void)printf("║                Current data:               ║\n");
+    (void)printf("╠════════════════════════════════════════════╣\n");
+    (void)printf("║ Fuel mass:       %8.3f g                ║\n", main_reaction.fuel_g);
+    (void)printf("║ Oxidizer volume: %8.3f ml               ║\n", main_reaction.oxidizer_volume);
+    (void)printf("╠════════════════════════════════════════════╣\n");
+    (void)printf("║ Fuel mol:        %8.3f mol              ║\n", main_reaction.fuel_mol);
+    (void)printf("╚════════════════════════════════════════════╝\n");
 
     (void)printf("\nWhat do you want to change?: \n");
-    (void)printf("1. Set fuel mass\n");
-    (void)printf("2. Set oxidizer volume\n");
-    (void)printf("3. Set fuel mol\n");
-    (void)printf("4. Set oxidizer mol\n");
-    (void)printf("5. Set target product mass\n");
-    (void)printf("6. Set target product mol\n");
-    (void)printf("7. Change OF ratio\n");
+    (void)printf("1. Set fuel mass <-- implemented ✔\n");
+    (void)printf("2. Set oxidizer volume ❌\n");
+    (void)printf("3. Set fuel mol <-- implemented ✔\n");
+    (void)printf("4. Set oxidizer mol ❌\n");
+    (void)printf("5. Set target product mass ❌\n");
+    (void)printf("6. Set target product mol ❌\n");
+    (void)printf("7. Change OF ratio ❌\n");
+    (void)printf("\n-1. Quit\n");
+    (void)printf("(No sanitization, this will be a GUI later)\n");
 
     (void)printf("\n\nEnter number to choose: ");
     (void)scanf("%d", &choice);
@@ -42,12 +55,19 @@ int main(){
         return 0; /* just quits haha */
       case 1:
         (void)printf("Recalculating from fuel mass...\n");
+        (void)printf("Input grams of fuel: ");
+        (void)scanf("%f", &input); 
+        input /= main_reaction.fuel_uma;
+        (void)recalculateFromFuelMol(&main_reaction, input);
         break;
       case 2:
         (void)printf("Recalculating from oxidizer volume...\n");
         break;
       case 3:
-        (void)printf("Recalculating from fuel mol...\n");
+        (void)printf("Input moles of fuel: ");
+        (void)scanf("%f", &input);
+        (void)printf("Recalculating from %3.2f moles of fuel\n", input);
+        (void)recalculateFromFuelMol(&main_reaction, input);
         break;
       case 4:
         (void)printf("Recalculating from oxidizer mol...\n");
@@ -62,8 +82,9 @@ int main(){
         (void)printf("Recalculating from OF ratio...");
         break;
       default:
-        (void)printf("Wrong input make");
-        break;
+        /* I prefer to kill the program than to loop for now*/
+        (void)printf("Wrong input...\n");
+        return 0;
     }
 
   }
