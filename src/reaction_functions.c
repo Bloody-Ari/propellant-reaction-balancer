@@ -50,7 +50,7 @@ void defineMainReactionData(struct ReactionData *main_reaction){
 
   main_reaction->oxidizer_mol = 6;
   main_reaction->oxidizer_uma = 36.46;
-  main_reaction->oxidizer_molarity = 6;
+  main_reaction->oxidizer_molarity =7.6;
   main_reaction->oxidizer_density_g_cm3 = 1.01; /* depends on concentration */
 
   main_reaction->main_product_uma = 1.008;

@@ -16,7 +16,7 @@ int main(){
 
   struct ReactionData main_reaction = createEmptyReactionStruct();
 
-  float input = 0;
+  float input = 0; /* just to have something to play around with sanitization*/
 
   (void)defineMainReactionData(&main_reaction);
 
@@ -29,6 +29,8 @@ int main(){
   while(1){
     (void)printf("╔════════════════════════════════════════════╗\n");
     (void)printf("║                Current data:               ║\n");
+    (void)printf("╠════════════════════════════════════════════╣\n");
+    (void)printf("║ Oxidizer M:      %8.3f M                ║\n", main_reaction.oxidizer_molarity);
     (void)printf("╠════════════════════════════════════════════╣\n");
     (void)printf("║ Fuel mass:       %8.3f g                ║\n", main_reaction.fuel_g);
     (void)printf("║ Oxidizer volume: %8.3f ml               ║\n", main_reaction.oxidizer_volume);
@@ -44,6 +46,7 @@ int main(){
     (void)printf("5. Set target product mass ❌\n");
     (void)printf("6. Set target product mol ❌\n");
     (void)printf("7. Change OF ratio ❌\n");
+    (void)printf("8. Change Oxidizer Molarity <-- implemented ✔\n");
     (void)printf("\n-1. Quit\n");
     (void)printf("(No sanitization, this will be a GUI later)\n");
 
@@ -80,6 +83,11 @@ int main(){
         break;
       case 7:
         (void)printf("Recalculating from OF ratio...");
+        break;
+      case 8:
+        (void)printf("New oxidizer molarity: ");
+        (void)scanf("%f", &input);
+        main_reaction.oxidizer_molarity = input;
         break;
       default:
         /* I prefer to kill the program than to loop for now*/
