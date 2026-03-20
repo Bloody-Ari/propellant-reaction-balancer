@@ -71,7 +71,7 @@ void recalculateFromFuelMol(struct ReactionData *main_reaction, float new_fuel_a
 }
 
 /*
- * Why??? I think it's more readable, I would probably add comments otherwise
+ * Why??? I think it's more readable, I would probably add comments anyways
  */
 float massToMol(float mass, float uma){
   return mass/uma;

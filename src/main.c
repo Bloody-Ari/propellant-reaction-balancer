@@ -35,12 +35,11 @@ int main(){
     (void)printf("║ Fuel mass:           %8.3f g            ║\n", main_reaction.fuel_g);
     (void)printf("║ Oxidizer volume:     %8.3f ml           ║\n", main_reaction.oxidizer_volume);
     (void)printf("╠════════════════════════════════════════════╣\n");
+    (void)printf("║ Main Product mol:    %8.3f mol          ║\n", main_reaction.main_product_mol);
     (void)printf("║ Main Product mass:   %8.3f g            ║\n", main_reaction.main_product_g);
     (void)printf("╠════════════════════════════════════════════╣\n");
     (void)printf("║ Fuel mol:            %8.3f mol          ║\n", main_reaction.fuel_mol);
     (void)printf("║ Oxidizer mol:        %8.3f mol          ║\n", main_reaction.oxidizer_mol);
-    (void)printf("╠════════════════════════════════════════════╣\n");
-    (void)printf("║ Main Product mol:    %8.3f mol          ║\n", main_reaction.main_product_mol);
     (void)printf("╚════════════════════════════════════════════╝\n");
 
     (void)printf("\nWhat do you want to change?: \n");
